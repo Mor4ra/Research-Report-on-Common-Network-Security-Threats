@@ -149,16 +149,17 @@ This communication happens over the network, often disguised as normal traffic u
 - Availability is compromised when malware renders systems inoperable, WannaCry is a direct example, encrypted systems could not function, making services entirely unavailable.
 
 ##### *Countermeasures*
-- **Patch Management** — the WannaCry attack succeeded largely because organizations had not applied an available patch. Keeping operating systems, network services, and software updated closes the vulnerabilities that network-based exploitation depends on.
-- **Network Segmentation** — dividing a network into isolated segments so that malware that enters one segment cannot freely move to others. If WannaCry had encountered proper segmentation, its lateral movement would have been contained to a smaller portion of the network.
-- **Intrusion Detection and Prevention Systems (IDS/IPS)** — monitoring network traffic for patterns associated with known malware delivery, exploitation attempts, and C2 communication. An IPS can automatically block suspicious traffic in real time.
-- **DNS Filtering** — blocking connections to known malicious domains at the DNS level, which disrupts C2 communication. If malware cannot reach its command and control server, the attacker loses the ability to direct it or receive exfiltrated data.
-- **Endpoint Detection and Response (EDR)** — security software on individual machines that monitors for malicious behavior and can isolate a compromised machine from the network, preventing lateral movement.
-- **Principle of Least Privilege** — restricting user and service accounts to only the access they need. This limits how far malware can spread using captured credentials, since those credentials only grant access to a narrow set of systems.
-- **Disabling Unnecessary Network Services** — closing open ports and disabling services that are not needed reduces the attack surface available for network-based exploitation. Eternal Blue exploited SMB — organizations that had disabled SMB where it was not needed were not vulnerable.
+- Patch Management — the WannaCry attack succeeded largely because organizations had not applied an available patch. Keeping operating systems, network services, and software updated closes the vulnerabilities that network-based exploitation depends on.
+- Network Segmentation — dividing a network into isolated segments so that malware that enters one segment cannot freely move to others. If WannaCry had encountered proper segmentation, its lateral movement would have been contained to a smaller portion of the network.
+- Intrusion Detection and Prevention Systems (IDS/IPS) — monitoring network traffic for patterns associated with known malware delivery, exploitation attempts, and C2 communication. An IPS can automatically block suspicious traffic in real time.
+- DNS Filtering — blocking connections to known malicious domains at the DNS level, which disrupts C2 communication. If malware cannot reach its command and control server, the attacker loses the ability to direct it or receive exfiltrated data.
+- Endpoint Detection and Response (EDR) — security software on individual machines that monitors for malicious behavior and can isolate a compromised machine from the network, preventing lateral movement.
+- Principle of Least Privilege — restricting user and service accounts to only the access they need. This limits how far malware can spread using captured credentials, since those credentials only grant access to a narrow set of systems.
+- Disabling Unnecessary Network Services — closing open ports and disabling services that are not needed reduces the attack surface available for network-based exploitation. Eternal Blue exploited SMB — organizations that had disabled SMB where it was not needed were not vulnerable.
+
 ### Insider Threats
 - Threats originating from individuals with legitimate network access, focusing on how insider access compromises confidentiality and integrity, with the Snowden case as a reference point, and basic access control measures as countermeasures
-- Insider threats primarily compromise **Confidentiality** and **Integrity**.
+- Insider threats primarily compromise Confidentiality and Integrity.
 
 Confidentiality is compromised when an insider accesses and leaks data beyond what their role requires — exfiltrating sensitive files, credentials, or records to unauthorized parties.
 
@@ -170,13 +171,13 @@ In 2013, Edward Snowden, a contractor working for the NSA, used his legitimate s
 
 ##### *Countermeasures*
 
-**Principle of Least Privilege** — users should only have access to what they need for their specific role. Snowden had access well beyond what his immediate duties required. Narrowing access limits the damage any single insider can cause.
+- Principle of Least Privilege — users should only have access to what they need for their specific role. Snowden had access well beyond what his immediate duties required. Narrowing access limits the damage any single insider can cause.
 
-**Access Logging and Monitoring** — recording who accesses what and when, and flagging anomalous patterns such as large data transfers, access at unusual hours, or retrieval of files outside a user's normal scope.
+- Access Logging and Monitoring — recording who accesses what and when, and flagging anomalous patterns such as large data transfers, access at unusual hours, or retrieval of files outside a user's normal scope.
 
-**Data Loss Prevention (DLP)** — systems that detect and block unauthorized transfer of sensitive data outside the network, whether via email, external drives, or cloud uploads.
+- Data Loss Prevention (DLP) — systems that detect and block unauthorized transfer of sensitive data outside the network, whether via email, external drives, or cloud uploads.
 
-**Periodic Access Reviews** — regularly auditing user access rights to ensure they remain appropriate, particularly when roles change or employees leave.
+- Periodic Access Reviews — regularly auditing user access rights to ensure they remain appropriate, particularly when roles change or employees leave.
 
 ## Conclusion
 
@@ -187,6 +188,7 @@ Traffic interception and network infrastructure attacks exploit the fundamental 
 What this means practically is that no single defense addresses all of these. Encryption protects data in transit but does nothing against a volumetric flood. Firewalls filter external traffic but are largely blind to a malicious insider. Patch management closes known vulnerabilities but cannot anticipate zero-days. Effective network security requires layered defenses — multiple overlapping controls so that the failure of any one does not leave the network fully exposed.
 
 Understanding these threats individually, as this report has attempted to do, is the necessary first step toward building defenses that are specific, deliberate, and proportionate to the risks organizations actually face.
+
 ## References
 [# MITM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
 [# How the Nokia Browser Decrypts SSL Traffic: A "Man in the Client"](https://blog.citp.princeton.edu/2013/01/11/how-the-nokia-browser-decrypts-ssl-traffic-a-man-in-the-client/)
